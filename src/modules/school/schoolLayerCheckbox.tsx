@@ -7,7 +7,7 @@ import { schoolStyle } from "./schoolFeature";
 
 const schoolLayer = new VectorLayer({
     source: new VectorSource({
-        url: "skoler.json",
+        url: "/KWS2100-lecture-05/skoler.json",
         format: new GeoJSON(),
     }),
     style: schoolStyle,

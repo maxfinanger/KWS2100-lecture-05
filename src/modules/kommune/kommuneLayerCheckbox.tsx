@@ -7,7 +7,7 @@ import { useLayer } from "../map/useLayer";
 const kommuneLayer = new VectorLayer({
     className: "kommuner",
     source: new VectorSource({
-        url: "/kommuner.json",
+        url: "/KWS2100-lecture-05/kommuner.json",
         format: new GeoJSON(),
     }),
 });
