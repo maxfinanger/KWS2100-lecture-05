@@ -1,7 +1,6 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
-
 import "./application.css";
 import "ol/ol.css";
 import { KommuneLayerCheckbox } from "../kommune/kommuneLayerCheckbox";
@@ -10,8 +9,9 @@ import { Layer } from "ol/layer";
 import { KommuneAside } from "../kommune/kommuneAside";
 import { FylkeLayerCheckbox } from "../fylke/fylkeLayerCheckbox";
 import { FylkeAside } from "../fylke/fylkeAside";
+import { LandLayerCheckbox } from "../land/landLayerCheckbox";
+import { LandAside } from "../land/landAside";
 import { SchoolLayerCheckbox } from "../school/schoolLayerCheckbox";
-import { SchoolAside } from "../school/schoolAside";
 
 export function Application() {
     function handleFocusUser(e: React.MouseEvent) {
@@ -43,13 +43,14 @@ export function Application() {
                 </button>
                 <KommuneLayerCheckbox />
                 <FylkeLayerCheckbox />
+                <LandLayerCheckbox />
                 <SchoolLayerCheckbox />
             </nav>
             <main>
                 <div ref={mapRef}></div>
-                <FylkeAside />
                 <KommuneAside />
-                <SchoolAside />
+                <FylkeAside />
+                <LandAside />
             </main>
         </MapContext.Provider>
     );

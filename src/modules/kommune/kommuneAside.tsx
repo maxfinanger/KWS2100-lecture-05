@@ -1,19 +1,14 @@
 import { useEffect } from "react";
-//import VectorSource from "ol/source/Vector";
-//import VectorLayer from "ol/layer/Vector";
 import { Feature } from "ol";
 import { useVectorFeatures } from "../map/useVectorFeatures";
 import { Stroke, Style } from "ol/style";
 import { useActiveFeatures } from "../map/useActiveFeatures";
-
-//type KommuneVectorLayer = VectorLayer<VectorSource<KommuneFeature>>;
 
 interface KommuneProperties {
     kommunenummer: string;
     navn: Stedsnavn[];
 }
 
-// "navn": [{ "rekkefolge": "", "sprak": "nor", "navn": "Værøy" }]
 interface Stedsnavn {
     sprak: "nor" | "sme" | "sma" | "smj" | "fkv";
     navn: string;
