@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import VectorSource from "ol/source/Vector";
-import VectorLayer from "ol/layer/Vector";
+//import VectorSource from "ol/source/Vector";
+//import VectorLayer from "ol/layer/Vector";
 import { Feature } from "ol";
 import { useVectorFeatures } from "../map/useVectorFeatures";
 import { Stroke, Style } from "ol/style";
 import { useActiveFeatures } from "../map/useActiveFeatures";
 
-type KommuneVectorLayer = VectorLayer<VectorSource<KommuneFeature>>;
+//type KommuneVectorLayer = VectorLayer<VectorSource<KommuneFeature>>;
 
 interface KommuneProperties {
     kommunenummer: string;
