@@ -17,12 +17,12 @@ const landLayer = new VectorLayer({
         return new Style({
             stroke: new Stroke({
                 color: "red",
-                width: 1,
+                width: 2,
             }),
             text: new Text({
                 stroke: new Stroke({
                     color: "white",
-                    width: 3,
+                    width: 6,
                 }),
                 text: ADMIN,
             }),

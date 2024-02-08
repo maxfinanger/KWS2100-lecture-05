@@ -34,7 +34,7 @@ export function Application() {
     useEffect(() => map.setTarget(mapRef.current), []);
     return (
         <MapContext.Provider value={{ map, layers, setLayers }}>
-            <header className="bg-secondary text-white p-1 text-center rounded">
+            <header className="bg-secondary text-white p-1 rounded w-25 d-flex justify-content-center text-center">
                 <h1>Kommune Kart</h1>
             </header>
             <nav className="p-3">
