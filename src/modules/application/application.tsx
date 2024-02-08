@@ -34,11 +34,14 @@ export function Application() {
     useEffect(() => map.setTarget(mapRef.current), []);
     return (
         <MapContext.Provider value={{ map, layers, setLayers }}>
-            <header>
-                <h1 className="text-center text-bold">Kommune kart</h1>
+            <header className="bg-secondary text-white p-1 text-center rounded">
+                <h1>Kommune Kart</h1>
             </header>
-            <nav>
-                <button className="btn btn-primary" onClick={handleFocusUser}>
+            <nav className="p-3">
+                <button
+                    className="btn btn-outline-info btn-sm me-2"
+                    onClick={handleFocusUser}
+                >
                     Focus on me
                 </button>
                 <KommuneLayerCheckbox />
@@ -46,8 +49,8 @@ export function Application() {
                 <LandLayerCheckbox />
                 <SchoolLayerCheckbox />
             </nav>
-            <main>
-                <div ref={mapRef}></div>
+            <main className="d-flex">
+                <div ref={mapRef} className="flex-grow-1"></div>
                 <KommuneAside />
                 <FylkeAside />
                 <LandAside />
