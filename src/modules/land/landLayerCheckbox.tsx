@@ -3,6 +3,7 @@ import { MapContext } from "../map/mapContext";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
+import { Stroke, Style, Text } from "ol/style";
 
 const landLayer = new VectorLayer({
     className: "land",
@@ -10,6 +11,23 @@ const landLayer = new VectorLayer({
         url: "/KWS2100-lecture-05/land.json",
         format: new GeoJSON(),
     }),
+    style: (feature) => {
+        const land = feature.getProperties();
+        const { ADMIN } = land;
+        return new Style({
+            stroke: new Stroke({
+                color: "red",
+                width: 1,
+            }),
+            text: new Text({
+                stroke: new Stroke({
+                    color: "white",
+                    width: 3,
+                }),
+                text: ADMIN,
+            }),
+        });
+    },
 });
 
 export function LandLayerCheckbox() {
@@ -20,21 +38,21 @@ export function LandLayerCheckbox() {
     useEffect(() => {
         if (checked) {
             setLayers((old) => [...old, landLayer]);
-        }
-        return () => {
+        } else {
             setLayers((old) => old.filter((l) => l !== landLayer));
-        };
-    }, [checked]);
+        }
+    }, [checked, setLayers]);
 
     return (
-        <div>
-            <label>
+        <div className="form-check form-switch">
+            <label className="form-check-label">
                 <input
+                    className="form-check-input"
                     type="checkbox"
                     checked={checked}
                     onChange={(e) => setChecked(e.target.checked)}
                 />
-                {checked ? "Hide" : "Show"} land
+                {checked ? "Hide" : "Show"} Countries
             </label>
         </div>
     );

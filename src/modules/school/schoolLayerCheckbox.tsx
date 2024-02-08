@@ -17,15 +17,17 @@ const schoolLayer = new VectorLayer({
 export function SchoolLayerCheckbox() {
     const [checked, setChecked] = useState(false);
     useLayer(schoolLayer, checked);
+
     return (
-        <div>
-            <label>
+        <div className="form-check form-switch">
+            <label className="form-check-label">
                 <input
-                    type={"checkbox"}
+                    className="form-check-input"
+                    type="checkbox"
                     checked={checked}
                     onChange={(e) => setChecked(e.target.checked)}
                 />
-                Schools
+                {checked ? "Hide" : "Show"} Schools
             </label>
         </div>
     );

@@ -17,14 +17,15 @@ export function KommuneLayerCheckbox() {
     useLayer(kommuneLayer, checked);
 
     return (
-        <div>
-            <label>
+        <div className="form-check form-switch">
+            <label className="form-check-label">
                 <input
+                    className="form-check-input"
                     type="checkbox"
                     checked={checked}
                     onChange={(e) => setChecked(e.target.checked)}
                 />
-                {checked ? "Hide" : "Show"} kommuner
+                {checked ? "Hide" : "Show"} Kommuner
             </label>
         </div>
     );
