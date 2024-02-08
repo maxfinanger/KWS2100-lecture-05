@@ -35,7 +35,7 @@ export function Application() {
     return (
         <MapContext.Provider value={{ map, layers, setLayers }}>
             <header>
-                <h1>Kommune kart</h1>
+                <h1 className="text-center text-bold">Kommune kart</h1>
             </header>
             <nav>
                 <button className="btn btn-primary" onClick={handleFocusUser}>
