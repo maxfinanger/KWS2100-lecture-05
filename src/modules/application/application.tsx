@@ -12,6 +12,7 @@ import { FylkeAside } from "../fylke/fylkeAside";
 import { LandLayerCheckbox } from "../land/landLayerCheckbox";
 import { LandAside } from "../land/landAside";
 import { SchoolLayerCheckbox } from "../school/schoolLayerCheckbox";
+import { SoundButton } from "../sound/soundButton";
 
 export function Application() {
     function handleFocusUser(e: React.MouseEvent) {
@@ -44,6 +45,7 @@ export function Application() {
                 >
                     Focus on me
                 </button>
+                <SoundButton />
                 <KommuneLayerCheckbox />
                 <FylkeLayerCheckbox />
                 <LandLayerCheckbox />
