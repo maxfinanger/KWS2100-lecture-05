@@ -1,4 +1,4 @@
-import got_him from "/KWS2100-lecture-05/got_him.mp3";
+/*import got_him from "/KWS2100-lecture-05/got_him.mp3";
 
 export function SoundButton() {
     return (
@@ -11,4 +11,4 @@ export function SoundButton() {
             Got him!
         </button>
     );
-}
+}*/
